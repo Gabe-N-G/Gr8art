@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+
+
+
 const artSchema = mongoose.Schema({
   title: {
     type: String,
@@ -14,12 +17,13 @@ const artSchema = mongoose.Schema({
     required: true
   },
   owner:{
-    type: ObjectId,
-    ref: "Art"
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Art",
+    required: true
   },
   comments:{
-    type: [ObjectId],
-    ref: "Comments"
+    type: [commentSchema],
+    //embedding comments here
   }
 
 });
