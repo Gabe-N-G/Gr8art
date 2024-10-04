@@ -21,12 +21,15 @@ router.get('/new', async (req,res) => {
 
 router.post('/', async (req,res) => {
   try{
+    const colors = JSON.parse(req.body.colorArray)
     const artData ={
       ...req.body,
       owner: req.session.user._id,
+      colorArray: colors
     }
     console.log(artData)
-
+    
+    
   } catch (error){
     console.log(error)
     res.redirect("/")

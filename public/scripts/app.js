@@ -7,6 +7,7 @@ let colorArray = []
 
 const container = document.querySelector(".flex-container")
 const colorSelect = document.querySelector("#color-select")
+const colorInput = document.querySelector("#colorArray")
 let cells;
 
 
@@ -20,6 +21,7 @@ function makeGrid() {
     }
     cells = document.querySelectorAll(".flex-item")
 }
+
 
 
 function collectColors() {
@@ -46,4 +48,10 @@ function handleChange(e){
 container.addEventListener("click",handleClick)
 colorSelect.addEventListener("change",handleChange)
 
+let form =  document.querySelector('form')
+form.addEventListener("submit",()=>{
+    collectColors()
+    colorInput.value=JSON.stringify(colorArray)
+
+})
 makeGrid()
