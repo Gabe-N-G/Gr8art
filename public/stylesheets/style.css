@@ -5,7 +5,7 @@
   }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: "comic sans MS", "comic sans", Arial, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
