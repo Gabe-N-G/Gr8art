@@ -6,24 +6,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  <!-- <script src="/scripts/app.js" defer></script> -->
   <title>Look upon these works!</title>
 </head>
+<!-- test putting my JS up here. -->
+
 <body>
+  <script>
+  </script>
     <%- include('../partials/_navbar.ejs') %> 
   <h1>I love your work!</h1>
   <div id="gallery-card">
   
     <% arts.forEach(art => { %>
-
+      
       <div class="display-grid">
-
-    
       </div>
       <%= art.title %>    
       by <%= art.owner.username %>
 
   </div>
-    
+   <script>
+  const grid = document.querySelector(".display-grid") 
+  makeDisplay()
+   </script>
   <% }); %>
   <a href="/arts/new">Make more art!</a>
 </body>
