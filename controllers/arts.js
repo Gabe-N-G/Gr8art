@@ -28,7 +28,9 @@ router.post('/', async (req,res) => {
       colorArray: colors
     }
     console.log(artData)
-    
+
+    const art = new Art(artData);
+    await art.save()
     
   } catch (error){
     console.log(error)

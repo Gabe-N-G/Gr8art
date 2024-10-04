@@ -34,8 +34,11 @@ function collectColors() {
 
 function handleClick(e) {
     // console.log(`you've clicked ${e.target.id}`)
-    e.target.style.backgroundColor = currentColor
-    // console.log(e.target)
+    if  (e.target.className === "flex-item") {
+        
+        e.target.style.backgroundColor = currentColor   
+    }
+    // console.log(e.target.id, e.target.className)
     // console.log(e.target.style.backgroundColor)
     collectColors()
 }
