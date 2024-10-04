@@ -28,11 +28,12 @@
     align-items: center;
     width: 12.5%; 
     height: 12.5%;
-    background-color: grey;
+    /* background-color: grey; */
     border: 2px dashed black;
   }
   
-  .flex-item:hover {
-    background-color: limegreen;
+  /* doesn't work once you change colors. */
+  .flex-item:hover { 
+    background-color: limegreen !important;
   }
   

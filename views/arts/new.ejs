@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gr8Art</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <!-- <script src="../../public/scripts/app.js" defer></script> -->
-     <script src="/scripts/app.js" defer></script>
+    <!-- Refer to app.js for most of body of this page -->
+     <script src="/scripts/app.js" defer></script>      
 </head>
 <body>
     <body>
@@ -29,9 +29,17 @@
             <option value="black">Black</option>
         </select>
 
-        <form action="" method="POST">
+        <form action="/arts" method="POST">
+            
             <label for="title">Title:</label>
+            <input type="text" name="title" id="title">
 
+            <label for="description">Description</label>
+            <textarea name="description" id="description"></textarea>
+
+           
+
+            <button type="submit">Add art!</button>
         </form>
       </body>      
 </body>

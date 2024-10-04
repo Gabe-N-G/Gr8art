@@ -20,16 +20,14 @@ function makeGrid() {
     }
     cells = document.querySelectorAll(".flex-item")
 }
-makeGrid()
-
 
 
 function collectColors() {
     colorArray = []
     cells.forEach(cell => {
         colorArray.push(cell.style.backgroundColor)
-        console.log(colorArray)
     });
+    console.log(colorArray)
 }
 
 function handleClick(e) {
@@ -47,3 +45,5 @@ function handleChange(e){
 
 container.addEventListener("click",handleClick)
 colorSelect.addEventListener("change",handleChange)
+
+makeGrid()

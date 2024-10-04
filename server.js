@@ -41,18 +41,10 @@ app.get('/', (req, res) => {
   // Check if the user is signed in
   if (req.session.user) {
     // Redirect signed-in users to their applications index
-    res.redirect(`/users/${req.session.user._id}/arts`);
+    res.redirect(`/arts`);
   } else {
     // Show the homepage for users who are not signed in
     res.render('index.ejs');
-  }
-});
-
-app.get('/vip-lounge', (req, res) => {
-  if (req.session.user) {
-    res.send(`Welcome to the party ${req.session.user.username}.`);
-  } else {
-    res.send('Sorry, no guests allowed.');
   }
 });
 
@@ -60,7 +52,7 @@ app.use('/auth', authController);
 
 app.use(isSignedIn)
 
-app.use('/users/:userId/arts', artsController); 
+app.use('/arts', artsController); 
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
