@@ -9,8 +9,22 @@
   <title>Look upon these works!</title>
 </head>
 <body>
-    <%- include('../partials/_navbar.ejs') %> // add your nav here
+    <%- include('../partials/_navbar.ejs') %> 
   <h1>I love your work!</h1>
+  <div id="gallery-card">
+  
+    <% arts.forEach(art => { %>
+
+      <div class="display-grid">
+
+    
+      </div>
+      <%= art.title %>    
+      by <%= art.owner.username %>
+
+  </div>
+    
+  <% }); %>
   <a href="/arts/new">Make more art!</a>
 </body>
 </html>

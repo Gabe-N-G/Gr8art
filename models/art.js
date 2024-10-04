@@ -28,7 +28,7 @@ const artSchema = mongoose.Schema({
   },
   owner:{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Art",
+    ref: "User",
     required: true
   },
   comments:{

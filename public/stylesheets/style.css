@@ -31,6 +31,19 @@
     /* background-color: grey; */
     border: 2px dashed black;
   }
+
+  .display-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 160px;
+    height: 160px;
+  }
+
+  .display-container .flex-item{
+    width: 160px;
+    height: 160px;
+    border: none
+  }
   
   /* doesn't work once you change colors. */
   .flex-item:hover { 

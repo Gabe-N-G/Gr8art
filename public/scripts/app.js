@@ -1,6 +1,6 @@
 console.log("hello world")
 
-let currentColor = "white"
+let currentColor = "black"
 let colorArray = []
 
 // const sampleGrid = ['yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'yellow', 'green', 'green', 'green', 'green', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow']

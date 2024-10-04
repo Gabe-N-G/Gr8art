@@ -8,7 +8,9 @@ const Art = require('../models/art.js')
 // we will build out our router logic here
 router.get('/', async (req, res) => {
   try {
-    res.render('arts/index.ejs');
+    const allArts = await Art.find({}).populate("owner")
+    console.log(allArts)
+    res.render('arts/index.ejs', {arts : allArts});
   } catch (error) {
     console.log(error)
     res.redirect('/')
@@ -31,7 +33,9 @@ router.post('/', async (req,res) => {
 
     const art = new Art(artData);
     await art.save()
-    
+
+    res.redirect("/arts")
+
   } catch (error){
     console.log(error)
     res.redirect("/")
