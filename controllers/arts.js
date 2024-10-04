@@ -14,4 +14,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/new', async (req,res) => {
+  res.render('arts/new.ejs')
+})
+
 module.exports = router;

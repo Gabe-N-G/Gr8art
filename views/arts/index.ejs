@@ -9,6 +9,8 @@
   <title>Look upon these works!</title>
 </head>
 <body>
-  <h1>Art goes here</h1>
+    <%- include('../partials/_navbar.ejs') %> // add your nav here
+  <h1>I love your work!</h1>
+  <a href="/users/<%=user._id%>/arts/new">Make more art!</a>
 </body>
 </html>

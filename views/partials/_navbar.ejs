@@ -1,0 +1,28 @@
+<!-- views/partials/_navbar.ejs -->
+
+<nav>
+    <% if(user) { %>
+        
+        <div id="#icon">
+            Gr8Art
+        </div>
+        
+        <div id="links">
+            <a href="/">All work (TBD) </a>
+            <a href="/users/<%= user._id %>/arts">Your work</a>
+            <a href="/auth/sign-out">Sign Out</a>
+        </div>
+        
+    <% } else { %>
+        
+        <div id="#icon">
+            Gr8Art
+        </div>
+        
+        <div id="links">
+            <a href="/auth/sign-in">Sign In</a>
+            <a href="/auth/sign-up">Sign Up</a>
+        </div>
+    <% } %>
+  </nav>
+  
