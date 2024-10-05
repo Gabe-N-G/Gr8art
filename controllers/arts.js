@@ -5,7 +5,7 @@ const router = express.Router();
 const User = require('../models/user.js');
 const Art = require('../models/art.js')
 
-// we will build out our router logic here
+//INDEX ROUTE FOR ALL ART
 router.get('/', async (req, res) => {
   try {
     const allArts = await Art.find({}).populate("owner")
@@ -17,10 +17,13 @@ router.get('/', async (req, res) => {
   }
 });
 
+//NEW ROUTE
 router.get('/new', async (req,res) => {
   res.render('arts/new.ejs')
 })
 
+
+// INDEX ROUTE FOR USERS ARTS
 router.get('/myarts', async(req,res) =>{
         // res.send("Here are your pieces")
   try {
@@ -36,7 +39,28 @@ router.get('/myarts', async(req,res) =>{
 
 })
 
+router.get('/:artsid', async(req,res) =>{
+  // res.send(req.params.artsid)
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    console.log(currentUser)
+    const Sart = await Art.find({_id: req.params.artsid})
+    console.log(Sart)
+    res.render('arts/show.ejs', 
+      {
+        art : Sart,
+        currentUser
+      }
+    );
+} catch (error) {
+    console.log(error)
+    res.redirect('/')
+}
 
+
+})
+
+//POST route
 router.post('/', async (req,res) => {
   try{
     const colors = JSON.parse(req.body.colorArray)
@@ -57,5 +81,7 @@ router.post('/', async (req,res) => {
     res.redirect("/")
   }
 })
+
+
 
 module.exports = router;

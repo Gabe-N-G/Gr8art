@@ -16,6 +16,8 @@
 
   <h1>I love your work!</h1>
   <% arts.forEach(art => { %>
+
+    <a href="/arts/<%= art._id %>">
       <div id="gallery-card">
           
           <div class="display-container">
@@ -27,6 +29,7 @@
           <%= art.title %>    
           by <%= art.owner.username %>
       </div>
+    </a>  
   <% }); %>
   <a href="/arts/new">Make more art!</a>
 </body>

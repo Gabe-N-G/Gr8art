@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gr8Art</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+   
+<body>
+    
+    <%- include('../partials/_navbar.ejs') %> 
+    <h1>Title: <%= art[0].title %></h1>
+
+        <div class="flex-container">
+            <%art[0].colorArray.forEach(color => { %>
+                <div class="flex-item" style="background-color:<%=color %>"> </div>
+              <%}); %>
+        </div>
+    <p>Description: <%= art[0].description %></p>
+    <!-- placeholder for comment section -->
+    <%= art[0].comments %>
+
+</body>

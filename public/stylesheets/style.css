@@ -46,7 +46,7 @@
   }
   
   /* doesn't work once you change colors. */
-  .flex-item:hover { 
+  /* .flex-item:hover { 
     background-color: limegreen;
-  }
+  } */
   
