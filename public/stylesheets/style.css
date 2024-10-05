@@ -32,7 +32,7 @@
     border: 2px dashed black;
   }
 
-  /* .display-container{
+  .display-container{
     display: flex;
     flex-wrap: wrap;
     width: 160px;
@@ -43,10 +43,10 @@
     width: 12.5%;
     height: 12.5%;
     border: none
-  } */ 
+  }
   
   /* doesn't work once you change colors. */
   .flex-item:hover { 
-    background-color: limegreen !important;
+    background-color: limegreen;
   }
   
