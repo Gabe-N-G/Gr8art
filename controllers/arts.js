@@ -9,7 +9,7 @@ const Art = require('../models/art.js')
 router.get('/', async (req, res) => {
   try {
     const allArts = await Art.find({}).populate("owner")
-    console.log(allArts)
+    // console.log(allArts)
     res.render('arts/index.ejs', {arts : allArts});
   } catch (error) {
     console.log(error)
@@ -20,6 +20,22 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req,res) => {
   res.render('arts/new.ejs')
 })
+
+router.get('/myarts', async(req,res) =>{
+        // res.send("Here are your pieces")
+  try {
+          const currentUser = await User.findById(req.session.user._id);
+          console.log(currentUser)
+          const myArts = await Art.find({owner : currentUser}).populate("owner")
+          // console.log(myArts)
+          res.render('arts/index.ejs', {arts : myArts});
+      } catch (error) {
+          console.log(error)
+          res.redirect('/')
+     }
+
+})
+
 
 router.post('/', async (req,res) => {
   try{
