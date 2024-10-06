@@ -11,9 +11,10 @@
 </head>
     <body>
         <%- include('../partials/_navbar.ejs') %> 
-            <div class="flex-container" id="new-container">
-            <!-- what JS is updating with 
-                <div id="cell1" class="flex-item">1</div> 64 times -->
+            <div class="flex-container">
+                <%art.colorArray.forEach(color => { %>
+                    <div class="flex-item" style="background-color:<%=color %>"> </div>
+                  <%}); %>
             </div>
             
             <select name="color" id="color-select">

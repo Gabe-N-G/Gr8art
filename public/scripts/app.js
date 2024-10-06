@@ -6,11 +6,11 @@ let colorArray = []
 // const sampleGrid = ['yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'yellow', 'yellow', 'green', 'yellow', 'yellow', 'yellow', 'green', 'green', 'green', 'green', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow']
 
 const container = document.querySelector(".flex-container")
+const newContainer = document.querySelector("#new-container")
 const colorSelect = document.querySelector("#color-select")
 const colorInput = document.querySelector("#colorArray")
 // const grid = document.querySelector(".display-grid") 
-
-let cells;
+let cells = document.querySelectorAll(".flex-item")
 
 
 function makeGrid() {
@@ -19,9 +19,8 @@ function makeGrid() {
         div.classList.add("flex-item")
         div.setAttribute("id",`cell`+ i)
         // div.style.backgroundColor = sampleGrid[i]
-        container.appendChild(div)
+        newContainer.appendChild(div)
     }
-    cells = document.querySelectorAll(".flex-item")
 }
 
 // function makeDisplay(){

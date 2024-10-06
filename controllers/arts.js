@@ -92,18 +92,29 @@ router.post('/', async (req,res) => {
   }
 })
 
+//delete route
 router.delete('/:artsid', async (req,res)=> {
   try{
     const byeArt = await Art.findByIdAndDelete(req.params.artsid)
     await byeArt.save()
     res.resdirect('/myarts')
-
-
   }catch (error){
     console.log(error)
     res.redirect("/")
   }
+})
 
+//edit route
+router.get('/:artsid/edit', async (req,res)=>{
+  try{
+    const editART = await Art.findById(req.params.artsid)
+    res.render('arts/edit.ejs', {
+      art: editART
+    })
+  }catch (error){
+    console.log(error)
+    res.redirect("/")
+  }
 })
 
 
