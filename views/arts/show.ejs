@@ -9,6 +9,7 @@
 <body>
     
     <%- include('../partials/_navbar.ejs') %> 
+    <%= art._id %>
     <h1>Title: <%= art.title %></h1>
 
         <div class="flex-container">
@@ -19,16 +20,17 @@
     <p>Description: <%= art.description %></p>
     <!-- placeholder for comment section -->
     <%= art.comments %>
-    
-    <!-- Kind of spaghetti code here, comparing an object (json?) to a string. can't use stringify here.) -->
+
     <% if(match){ %>
     
         <p>You made this!</p>
-
-    <% } else { %>
-
-        <p>you didn't make this</p>
+        <a>Edit this work</a>
+        <form action="/arts/<%= art._id %>?_method=DELETE" method="POST"> 
+           <button type="submit">Delete this work 😢</button> 
+        </form>
     <% } %>
+
+    <a>leave a comment!</a>
 
 
 </body>

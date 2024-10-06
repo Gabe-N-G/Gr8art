@@ -47,8 +47,8 @@ router.get('/:artsid', async(req,res) =>{
     // let artOwner= JSON.stringify(sart.owner)
     // console.log(JSON.stringify(sart.owner))
     // console.log(req.session.user._id)
-
-    //weirdly had to make  this a truty statement not a true one. ask teachers later.
+    
+    //weirdly had to make this a truty statement not a true one. ask teachers later.
     if (sart.owner == req.session.user._id){
       match = true
     } else {
@@ -92,6 +92,19 @@ router.post('/', async (req,res) => {
   }
 })
 
+router.delete('/:artsid', async (req,res)=> {
+  try{
+    const byeArt = await Art.findByIdAndDelete(req.params.artsid)
+    await byeArt.save()
+    res.resdirect('/myarts')
+
+
+  }catch (error){
+    console.log(error)
+    res.redirect("/")
+  }
+
+})
 
 
 module.exports = router;
