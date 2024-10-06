@@ -19,5 +19,16 @@
     <p>Description: <%= art[0].description %></p>
     <!-- placeholder for comment section -->
     <%= art[0].comments %>
+    <!-- Kind of spaghetti code here, comparing an object (json? to a string) -->
+    <% if( art[0].owner == owner){ %>
+
+
+        <p>You made this!</p>
+
+   <% } else { %>
+
+        <p>you didn't make this</p>
+    <% } %>
+
 
 </body>

@@ -60,7 +60,7 @@ function handleChange(e){
 container.addEventListener("click",handleClick)
 colorSelect.addEventListener("change",handleChange)
 
-let form =  document.querySelector('form')
+let form =  document.querySelector('art-form')
 form.addEventListener("submit",()=>{
     collectColors()
     colorInput.value=JSON.stringify(colorArray)

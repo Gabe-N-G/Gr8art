@@ -42,14 +42,12 @@ router.get('/myarts', async(req,res) =>{
 router.get('/:artsid', async(req,res) =>{
   // res.send(req.params.artsid)
   try {
-    const currentUser = await User.findById(req.session.user._id);
-    console.log(currentUser)
     const Sart = await Art.find({_id: req.params.artsid})
     console.log(Sart)
     res.render('arts/show.ejs', 
       {
         art : Sart,
-        currentUser
+        owner: req.session.user._id,
       }
     );
 } catch (error) {
