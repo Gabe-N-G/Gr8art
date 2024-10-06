@@ -41,12 +41,25 @@ router.get('/myarts', async(req,res) =>{
 router.get('/:artsid', async(req,res) =>{
   // res.send(req.params.artsid)
   try {
-    const Sart = await Art.findById(req.params.artsid)
-    console.log(Sart)
+    const sart = await Art.findById(req.params.artsid)
+    let match
+
+    // let artOwner= JSON.stringify(sart.owner)
+    // console.log(JSON.stringify(sart.owner))
+    // console.log(req.session.user._id)
+
+    //weirdly had to make  this a truty statement not a true one. ask teachers later.
+    if (sart.owner == req.session.user._id){
+      match = true
+    } else {
+      match = false
+    }
+
+    console.log(match)
     res.render('arts/show.ejs', 
       {
-        art : Sart,
-        owner: req.session.user._id,
+        art : sart,
+        match
       }
     );
 } catch (error) {
