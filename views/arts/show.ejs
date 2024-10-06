@@ -24,12 +24,12 @@
     <% if(match){ %>
     
         <p>You made this!</p>
-        <a>Edit this work</a>
+        <a href="/arts/<%= art._id %>/edit">Edit this work</a>
         <form action="/arts/<%= art._id %>?_method=DELETE" method="POST"> 
            <button type="submit">Delete this work 😢</button> 
         </form>
     <% } %>
-
+ 
     <a>leave a comment!</a>
 
 

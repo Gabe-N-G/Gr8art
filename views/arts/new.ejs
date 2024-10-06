@@ -6,40 +6,40 @@
     <title>gr8Art</title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <!-- Refer to app.js for most of body of this page -->
-     <script src="/scripts/app.js" defer></script>      
+     <script src="/scripts/app.js" defer></script> 
+
 </head>
-<body>
-    <%- include('../partials/_navbar.ejs') %> 
-        <div class="flex-container">
-          <!-- what JS is updating with 
-            <div id="cell1" class="flex-item">1</div> 64 times -->
-          
-        </div>
-        
-        <select name="color" id="color-select">
-            <option value="black">Black</option>
-            <option value="red">Red</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-            <option value="yellow">Yellow</option>
-            <option value="grey">Grey</option>
-            <option value="cyan">Cyan</option>
-            <option value="magenta">Magenta</option>
-            <option value="brown">Brown</option>
-            <option value="white">White</option>
-        </select>
-
-        <form action="/arts" method="POST" id="art-form">
+    <body>
+        <%- include('../partials/_navbar.ejs') %> 
+            <div class="flex-container">
+            <!-- what JS is updating with 
+                <div id="cell1" class="flex-item">1</div> 64 times -->
+            </div>
             
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title">
+            <select name="color" id="color-select">
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+                <option value="grey">Grey</option>
+                <option value="cyan">Cyan</option>
+                <option value="magenta">Magenta</option>
+                <option value="brown">Brown</option>
+                <option value="white">White</option>
+            </select>
 
-            <label for="description">Description</label>
-            <textarea name="description" id="description"></textarea>
+            <form action="/arts" method="POST" id="art-form">
+                
+                <label for="title">Title:</label>
+                <input type="text" name="title" id="title">
 
-            <input type="hidden" id="colorArray" name="colorArray">
+                <label for="description">Description</label>
+                <textarea name="description" id="description"></textarea>
 
-            <button type="submit">Add art!</button>
-        </form>
-      </body>      
+                <input type="hidden" id="colorArray" name="colorArray">
+
+                <button type="submit">Add art!</button>
+            </form>
+    </body>      
 </html>

@@ -8,7 +8,7 @@ let colorArray = []
 const container = document.querySelector(".flex-container")
 const colorSelect = document.querySelector("#color-select")
 const colorInput = document.querySelector("#colorArray")
-const grid = document.querySelector(".display-grid") 
+// const grid = document.querySelector(".display-grid") 
 
 let cells;
 
@@ -24,14 +24,14 @@ function makeGrid() {
     cells = document.querySelectorAll(".flex-item")
 }
 
-function makeDisplay(){
-    for(let i = 0; i < 64; i++){
-          let div = document.createElement("div")
-          div.classList.add("flex-item")
-          div.style.backgroundColor = art.colorArray
-          grid.appendChild(div)
-      }
-    }
+// function makeDisplay(){
+//     for(let i = 0; i < 64; i++){
+//           let div = document.createElement("div")
+//           div.classList.add("flex-item")
+//           div.style.backgroundColor = art.colorArray
+//           grid.appendChild(div)
+//       }
+//     }
 
 function collectColors() {
     colorArray = []
@@ -60,7 +60,7 @@ function handleChange(e){
 container.addEventListener("click",handleClick)
 colorSelect.addEventListener("change",handleChange)
 
-let form =  document.querySelector('art-form')
+let form =  document.querySelector('#art-form')
 form.addEventListener("submit",()=>{
     collectColors()
     colorInput.value=JSON.stringify(colorArray)
@@ -68,4 +68,4 @@ form.addEventListener("submit",()=>{
 })
 
 makeGrid()
-makeDisplay()
+// makeDisplay()
