@@ -9,23 +9,23 @@
 <body>
     
     <%- include('../partials/_navbar.ejs') %> 
-    <h1>Title: <%= art[0].title %></h1>
+    <h1>Title: <%= art.title %></h1>
 
         <div class="flex-container">
-            <%art[0].colorArray.forEach(color => { %>
+            <%art.colorArray.forEach(color => { %>
                 <div class="flex-item" style="background-color:<%=color %>"> </div>
               <%}); %>
         </div>
-    <p>Description: <%= art[0].description %></p>
+    <p>Description: <%= art.description %></p>
     <!-- placeholder for comment section -->
-    <%= art[0].comments %>
-    <!-- Kind of spaghetti code here, comparing an object (json? to a string) -->
-    <% if( art[0].owner == owner){ %>
-
-
+    <%= art.comments %>
+    
+    <!-- Kind of spaghetti code here, comparing an object (json?) to a string. can't use stringify here.) -->
+    <% if( art.owner == owner){ %>
+    
         <p>You made this!</p>
 
-   <% } else { %>
+    <% } else { %>
 
         <p>you didn't make this</p>
     <% } %>

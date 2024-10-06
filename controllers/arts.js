@@ -32,17 +32,16 @@ router.get('/myarts', async(req,res) =>{
           const myArts = await Art.find({owner : currentUser}).populate("owner")
           // console.log(myArts)
           res.render('arts/index.ejs', {arts : myArts});
-      } catch (error) {
+    } catch (error) {
           console.log(error)
           res.redirect('/')
-     }
-
+    }
 })
 
 router.get('/:artsid', async(req,res) =>{
   // res.send(req.params.artsid)
   try {
-    const Sart = await Art.find({_id: req.params.artsid})
+    const Sart = await Art.findById(req.params.artsid)
     console.log(Sart)
     res.render('arts/show.ejs', 
       {
