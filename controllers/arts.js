@@ -117,5 +117,26 @@ router.get('/:artsid/edit', async (req,res)=>{
   }
 })
 
+//put/change route
+router.put('/:artsid', async (req,res)=>{
+  try{
+    const colors = JSON.parse(req.body.colorArray)
+    const editData ={
+      ...req.body,
+      owner: req.session.user._id,
+      colorArray: colors
+    }
+    const editArt =  await Art.findById(req.params.artsid)
+
+    editArt.set(editData)
+    await editArt.save()
+    res.redirect(`/arts/${req.params.artsid}`)
+  } catch (error){
+    console.log(error)
+    res.redirect("/")
+  }
+})
+
+
 
 module.exports = router;
