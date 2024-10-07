@@ -108,6 +108,12 @@ router.delete('/:artsid', async (req,res)=> {
 router.get('/:artsid/edit', async (req,res)=>{
   try{
     const editART = await Art.findById(req.params.artsid)
+    if(editART.owner != req.session.user._id){ 
+      res.send("You are not allowed to visit this page.")
+    } else {
+      console.log("permission granted.")
+    }
+
     res.render('arts/edit.ejs', {
       art: editART
     })
