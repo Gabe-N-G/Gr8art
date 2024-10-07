@@ -16,25 +16,26 @@
 
   <h1>I love your work!</h1>
   <div id="gallery-view">
-    
-    <% arts.forEach(art => { %>
-     
-        <div id="gallery-card">
-          <a href="/arts/<%= art._id %>">
-            <div class="display-container">
-              <%art.colorArray.forEach(color => { %>
-                <div class="flex-item" style="background-color:<%=color %>"> </div>
-              <%}); %>
-            </div> 
-            
-            <div id="title-card">
-                <%= art.title %>    
-                by <%= art.owner.username %>
-                <p>(<%= art.comments.length %>) Comments</p>           
-            </div>
-          </a> 
-        </div>   
-    <% }); %>
+   
+
+    <%  for (let i = arts.length -1 ; i >= 0; i--){ %>
+
+      <div id="gallery-card">
+        <a href="/arts/<%= arts[i]._id %>">
+          <div class="display-container">
+            <%arts[i].colorArray.forEach(color => { %>
+              <div class="flex-item" style="background-color:<%=color %>"> </div>
+            <%}); %>
+          </div> 
+          
+          <div id="title-card">
+              <%= arts[i].title %>    
+              by <%= arts[i].owner.username %>
+              <p>(<%= arts[i].comments.length %>) Comments</p>           
+          </div>
+        </a> 
+      </div>       
+      <% }; %>
   
   </div>    
   <a href="/arts/new">Make more art!</a>
