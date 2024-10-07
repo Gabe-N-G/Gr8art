@@ -19,7 +19,11 @@
         </div>
     <p>Description: <%= art.description %></p>
     <!-- placeholder for comment section -->
-    <%= art.comments %>
+    <% art.comments.forEach(comment => { %>
+    
+        <div class="comment-card"><%= comment.owner.username %> <%= comment.body %></div>
+
+    <%}) %>
 
     <% if(match){ %>
     
@@ -30,7 +34,12 @@
         </form>
     <% } %>
  
-    <a>leave a comment!</a>
+    <form action="/comments/arts/<%=art._id%>/comments" method="POST">
+                
+        <label for="body">Leave a comment!</label>
+        <textarea name="body" id="body"></textarea>
 
+        <button type="submit">Send!</button>
+    </form>
 
 </body>

@@ -12,6 +12,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const authController = require('./controllers/auth.js');
 const artsController = require('./controllers/arts.js');
+const commentsController = require('./controllers/comments.js')
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 const path = require('path');
@@ -52,7 +53,8 @@ app.use('/auth', authController);
 
 app.use(isSignedIn)
 
-app.use('/arts', artsController); 
+app.use('/arts', artsController);
+app.use('/comments', commentsController); 
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

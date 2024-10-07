@@ -41,7 +41,7 @@ router.get('/myarts', async(req,res) =>{
 router.get('/:artsid', async(req,res) =>{
   // res.send(req.params.artsid)
   try {
-    const sart = await Art.findById(req.params.artsid)
+    const sart = await Art.findById(req.params.artsid).populate("comments.owner")
     let match
 
     // let artOwner= JSON.stringify(sart.owner)
