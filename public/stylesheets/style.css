@@ -42,14 +42,9 @@
     border: 2px dashed black;
   }
 
-  .flex-item-256 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .f256 {
     width: 6.25%; 
     height: 6.25%;
-    /* background-color: grey; */
-    border: 2px dashed black;
   }
 
   .flex-item-1024 {

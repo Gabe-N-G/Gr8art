@@ -37,10 +37,18 @@ function makeGrid() {
 function makeGrid256(){
     for(let i = 0; i < 256; i++){
         let div = document.createElement("div")
-        div.classList.add("flex-item-256")
+        div.classList.add("flex-item")
+        div.classList.add("f256")
         div.setAttribute("id",`cell`+ i)
         newContainer.appendChild(div)
     }
+}
+
+function fill(){
+    cells = document.querySelectorAll(".flex-item")
+    cells.forEach((cell)=>{
+        cell.style.backgroundColor = currentColor
+    })
 }
 
 function gridToggle(){
