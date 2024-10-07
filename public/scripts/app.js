@@ -10,7 +10,7 @@ const newContainer = document.querySelector("#new-container")
 const colorSelect = document.querySelector("#color-select")
 const colorInput = document.querySelector("#colorArray")
 // const grid = document.querySelector(".display-grid") 
-let cells = document.querySelectorAll(".flex-item")
+let cells
 
 
 function makeGrid() {
@@ -33,6 +33,7 @@ function makeGrid() {
 //     }
 
 function collectColors() {
+    cells = document.querySelectorAll(".flex-item")
     colorArray = []
     cells.forEach(cell => {
         colorArray.push(cell.style.backgroundColor)

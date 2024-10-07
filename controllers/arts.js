@@ -108,6 +108,8 @@ router.delete('/:artsid', async (req,res)=> {
 router.get('/:artsid/edit', async (req,res)=>{
   try{
     const editART = await Art.findById(req.params.artsid)
+
+    //stops people from just adding /edit to edit files they do not own.
     if(editART.owner != req.session.user._id){ 
       res.send("You are not allowed to visit this page.")
     } else {
