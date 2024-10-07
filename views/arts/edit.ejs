@@ -11,6 +11,8 @@
 </head>
     <body>
         <%- include('../partials/_navbar.ejs') %> 
+        <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
+
             <div class="flex-container">
                 <%art.colorArray.forEach(color => { %>
                     <div class="flex-item" style="background-color:<%=color %>"> </div>
@@ -19,7 +21,7 @@
             
             <label for="color">Select your color</label>
             <select name="color" id="color-select">
-                <option value="black">Black</option>
+                <!-- <option value="black">Black</option>
                 <option value="red">Red</option>
                 <option value="green">Green</option>
                 <option value="blue">Blue</option>
@@ -28,7 +30,7 @@
                 <option value="cyan">Cyan</option>
                 <option value="magenta">Magenta</option>
                 <option value="brown">Brown</option>
-                <option value="white">White</option>
+                <option value="white">White</option>  -->
             </select>
 
             <form action="/arts/<%= art.id %>?_method=PUT" method="POST" id="art-form">

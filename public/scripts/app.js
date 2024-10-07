@@ -24,11 +24,13 @@ let cells
 
 
 function makeGrid() {
-    for(let i = 0; i < 64; i++){
-        let div = document.createElement("div")
-        div.classList.add("flex-item")
-        div.setAttribute("id",`cell`+ i)
-        newContainer.appendChild(div)
+    if (newContainer){
+        for(let i = 0; i < 64; i++){
+            let div = document.createElement("div")
+            div.classList.add("flex-item")
+            div.setAttribute("id",`cell`+ i)
+            newContainer.appendChild(div)
+        }
     }
 }
 
@@ -91,9 +93,11 @@ function handleChange(e){
     // console.log(currentColor)
 }
 
+
+makeColorSelect()
 makeGrid()
 // makeGrid256()
-makeColorSelect()
+
 
 container.addEventListener("click",handleClick)
 colorSelect.addEventListener("change",handleChange)
