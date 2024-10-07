@@ -15,16 +15,19 @@ let currentColor = "black"
 let colorArray = []
 let selectColors = ["Black", "Red", "Green", "Blue", "Yellow", "Grey", "Cyan", "Magenta", "Brown", "White"]
 let grid = true
+let small = true
 
 const container = document.querySelector(".flex-container")
 const newContainer = document.querySelector("#new-container")
 const colorSelect = document.querySelector("#color-select")
 const colorInput = document.querySelector("#colorArray")
+const bigButton = document.querySelector("#grid-size")
 let cells
 
 
 function makeGrid() {
     if (newContainer){
+        newContainer.innerHTML = " "
         for(let i = 0; i < 64; i++){
             let div = document.createElement("div")
             div.classList.add("flex-item")
@@ -35,12 +38,25 @@ function makeGrid() {
 }
 
 function makeGrid256(){
+    newContainer.innerHTML = " "
     for(let i = 0; i < 256; i++){
         let div = document.createElement("div")
         div.classList.add("flex-item")
         div.classList.add("f256")
         div.setAttribute("id",`cell`+ i)
         newContainer.appendChild(div)
+    }
+}
+
+function gridSize(){
+    if (small){
+        makeGrid256()
+        bigButton.innerText = "Grid size 16x16"
+        small = !small
+    } else {
+        makeGrid()
+        bigButton.innerText = "Grid size 8x8"
+        small = !small
     }
 }
 
