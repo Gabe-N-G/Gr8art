@@ -14,23 +14,21 @@
         <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
 
             <div class="flex-container">
-                <%art.colorArray.forEach(color => { %>
-                    <div class="flex-item" style="background-color:<%=color %>"> </div>
-                  <%}); %>
+                <% if(art.colorArray.length > 64) {%>
+                    <%art.colorArray.forEach(color => { %>
+                        <div class="flex-item f256" style="background-color:<%=color %>"> </div>
+                    <%}); %>
+                <%} else {%>
+                    <%art.colorArray.forEach(color => { %>
+                        <div class="flex-item" style="background-color:<%=color %>"> </div>
+                    <%}); %>
+                <% } %>   
             </div>
             
             <label for="color">Select your color</label>
             <select name="color" id="color-select">
                 <!-- <option value="black">Black</option>
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
-                <option value="yellow">Yellow</option>
-                <option value="grey">Grey</option>
-                <option value="cyan">Cyan</option>
-                <option value="magenta">Magenta</option>
-                <option value="brown">Brown</option>
-                <option value="white">White</option>  -->
+                ... -->
             </select>
             <button id="fill" onclick="fill()">Fill with color</button>
 

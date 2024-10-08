@@ -13,9 +13,15 @@
     <h1>Title: <%= art.title %></h1>
 
         <div class="flex-container">
-            <%art.colorArray.forEach(color => { %>
-                <div class="flex-item" style="background-color:<%=color %>"> </div>
-              <%}); %>
+            <% if(art.colorArray.length > 64) {%>
+                <%art.colorArray.forEach(color => { %>
+                    <div class="f256" style="background-color:<%=color %>"> </div>
+                <%}); %>
+            <%} else {%>
+                <%art.colorArray.forEach(color => { %>
+                    <div class="flex-item" style="background-color:<%=color %>"> </div>
+                <%}); %>
+            <% } %>   
         </div>
     <p>Description: <%= art.description %></p>
     <!-- placeholder for comment section -->

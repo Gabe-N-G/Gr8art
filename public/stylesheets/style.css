@@ -45,6 +45,7 @@
   .f256 {
     width: 6.25%; 
     height: 6.25%;
+    border: 2px dashed black;
   }
 
   .flex-item-1024 {
@@ -72,9 +73,11 @@
   }
 
   .display-container .flex-item{
-    width: 12.5%;
-    height: 12.5%;
     border: none
+  }
+
+  .display-container .f256{
+    border : none
   }
 
   #toolbar{
