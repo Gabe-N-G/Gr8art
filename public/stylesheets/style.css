@@ -85,7 +85,17 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
+  #palette{
+    display: flex;
+    flex-direction: column;
+  }
   
+  .palette-color{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+  }
   /* doesn't work once you change colors. */
   /* .flex-item:hover { 
     background-color: limegreen;

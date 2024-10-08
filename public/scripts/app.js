@@ -13,7 +13,7 @@ console.log("hello world")
 
 let currentColor = "black"
 let colorArray = []
-let selectColors = ["Black", "Red", "Green", "Blue", "Yellow", "Grey", "Cyan", "Magenta", "Brown", "White"]
+let selectColors = ["black", "red", "green", "blue", "yellow", "grey", "cyan", "magenta", "brown", "white"]
 let grid = true
 let small = true
 
@@ -23,6 +23,8 @@ const colorSelect = document.querySelector("#color-select")
 const colorInput = document.querySelector("#colorArray")
 const bigButton = document.querySelector("#grid-size")
 const selectSpan = document.querySelector("#selected-color")
+const palette = document.querySelector("#palette")
+
 let cells
 let autoclick
 
@@ -60,6 +62,17 @@ function gridSize(){
         bigButton.innerText = "Grid size 8x8"
         small = !small
     }
+}
+
+function makePalette(){
+    selectColors.forEach(c =>{
+        let div = document.createElement("div")
+        div.style.color = c
+        div.style.backgroundColor = c
+        div.classList.add("palette-color")
+        div.innerText = "■"
+        palette.appendChild(div)
+    })
 }
 
 function fill(){
@@ -115,11 +128,22 @@ function colorClick(e) {
 
 function handleChange(e){
     currentColor = e.target.value
+    selectSpan.style.backgroundColor = currentColor
     selectSpan.style.color = currentColor
+
     // console.log(currentColor)
 }
 
+function paletteChange(e){
+    currentColor = e.target.style.color
+    selectSpan.style.backgroundColor = currentColor
+    selectSpan.style.color = currentColor
 
+    colorSelect.value = currentColor
+    
+}
+
+makePalette()
 makeColorSelect()
 makeGrid()
 // makeGrid256()
@@ -149,6 +173,9 @@ container.addEventListener("mouseleave", ()=>{
 })
 
 colorSelect.addEventListener("change",handleChange)
+palette.addEventListener("click", paletteChange)
+
+
 
 //adds color array as an hidden input to form
 let form =  document.querySelector('#art-form')

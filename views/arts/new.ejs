@@ -15,15 +15,21 @@
                 <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
                 <p>new grid:</p><button id="grid-size" onclick="gridSize()">Grid size 8x8</button>
             </div>
-
-            <div class="flex-container" id="new-container">
-            <!-- what JS is updating with 
-                <div id="cell1" class="flex-item">1</div> 64 times -->
+            
+            <div id="edit-container">
+                <div class="flex-container" id="new-container">
+                <!-- what JS is updating with 
+                    <div id="cell1" class="flex-item">1</div> 64 times -->
+                </div>
+                <div id="palette">
+                </div>
+            
             </div>
+
 
             <p>16x16 grid available on desktop.</p>
             
-            <p>Current color:<span id="selected-color"> ■</span></p>
+            <p>Current color: <span style="background-color: black;" id="selected-color">■■</span></p>
             <label for="color-select">Select your color:</label>
             <select name="color" id="color-select">
                 <!-- <option value="black">Black</option>
