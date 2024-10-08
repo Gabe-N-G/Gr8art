@@ -76,6 +76,12 @@
     height: 12.5%;
     border: none
   }
+
+  #toolbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   
   /* doesn't work once you change colors. */
   /* .flex-item:hover { 

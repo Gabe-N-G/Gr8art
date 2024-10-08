@@ -23,6 +23,7 @@ const colorSelect = document.querySelector("#color-select")
 const colorInput = document.querySelector("#colorArray")
 const bigButton = document.querySelector("#grid-size")
 let cells
+let autoclick
 
 
 function makeGrid() {
@@ -101,12 +102,11 @@ function collectColors() {
     console.log(colorArray)
 }
 
-function handleClick(e) {
-    // console.log(`you've clicked ${e.target.id}`)
-    if  (e.target.className === "flex-item" || "flex-item-256") {
-        
+function colorClick(e) {
+    // console.log(e.target)
+    // if  (e.target.className == "flex-item" && e.target.style.backgroundColor != currentColor) {
         e.target.style.backgroundColor = currentColor   
-    }
+    // }
     // console.log(e.target.id, e.target.className)
     // console.log(e.target.style.backgroundColor)
     collectColors()
@@ -122,8 +122,30 @@ makeColorSelect()
 makeGrid()
 // makeGrid256()
 
+container.addEventListener("mousedown",(e)=>{
+    colorClick(e)
+    cells = document.querySelectorAll(".flex-item")
+    cells.forEach((cell)=>{
+        cell.addEventListener("mouseover", colorClick)
+        })
+    })
 
-container.addEventListener("click",handleClick)
+container.addEventListener("mouseup", ()=>{
+    cells = document.querySelectorAll(".flex-item")
+    cells.forEach((cell)=>{
+        cell.removeEventListener("mouseover", colorClick
+        )
+    })
+})
+
+container.addEventListener("mouseleave", ()=>{
+    cells = document.querySelectorAll(".flex-item")
+    cells.forEach((cell)=>{
+        cell.removeEventListener("mouseover", colorClick
+        )
+    })
+})
+
 colorSelect.addEventListener("change",handleChange)
 
 //adds color array as an hidden input to form

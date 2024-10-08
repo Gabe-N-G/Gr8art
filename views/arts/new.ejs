@@ -11,10 +11,11 @@
 </head>
     <body>
         <%- include('../partials/_navbar.ejs') %> 
+            <div id="toolbar">
+                <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
+                <p>new grid:</p><button id="grid-size" onclick="gridSize()">Grid size 8x8</button>
+            </div>
 
-            <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
-            <button id="grid-size" onclick="gridSize()">Grid size 8x8</button>
-            
             <div class="flex-container" id="new-container">
             <!-- what JS is updating with 
                 <div id="cell1" class="flex-item">1</div> 64 times -->
