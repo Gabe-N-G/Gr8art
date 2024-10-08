@@ -43,8 +43,8 @@ router.get('/:artsid', async(req,res) =>{
   try {
     const sart = await Art.findById(req.params.artsid).populate("comments.owner")
     let match
-
-    // let artOwner= JSON.stringify(sart.owner)
+    // console.log (sart.owner)
+    let artOwner= JSON.stringify(sart.owner)
     // console.log(JSON.stringify(sart.owner))
     // console.log(req.session.user._id)
     

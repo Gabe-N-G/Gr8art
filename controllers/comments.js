@@ -16,11 +16,11 @@ router.post('/arts/:artsid/comments', async (req,res) => {
       foundArt.comments.push(commentData)
       await foundArt.save()
       
-      res.redirect("/arts/:artsid")
+      res.redirect(`/arts/${req.params.artsid}`)
   
     } catch (error){
       console.log(error)
-      res.redirect("/arts/:artsid")
+      res.redirect(`/arts/${req.params.artsid}`)
     }
   })
 
