@@ -22,6 +22,7 @@ const newContainer = document.querySelector("#new-container")
 const colorSelect = document.querySelector("#color-select")
 const colorInput = document.querySelector("#colorArray")
 const bigButton = document.querySelector("#grid-size")
+const selectSpan = document.querySelector("#selected-color")
 let cells
 let autoclick
 
@@ -114,6 +115,7 @@ function colorClick(e) {
 
 function handleChange(e){
     currentColor = e.target.value
+    selectSpan.style.color = currentColor
     // console.log(currentColor)
 }
 
