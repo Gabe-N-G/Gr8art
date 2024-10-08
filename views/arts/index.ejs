@@ -22,11 +22,19 @@
 
       <div id="gallery-card">
         <a href="/arts/<%= arts[i]._id %>">
-          <div class="display-container">
-            <%arts[i].colorArray.forEach(color => { %>
-              <div class="flex-item" style="background-color:<%=color %>"> </div>
-            <%}); %>
-          </div> 
+          <% if(arts[i].colorArray.length > 64) { %>
+              <div class="display-container">
+                <%arts[i].colorArray.forEach(color => { %>
+                  <div class="f256" style="background-color:<%=color %>"> </div>
+                <%}); %>
+              </div> 
+          <% } else {%>
+            <div class="display-container">
+              <%arts[i].colorArray.forEach(color => { %>
+                <div class="flex-item" style="background-color:<%=color %>"> </div>
+              <%}); %>
+            </div> 
+          <% } %>
           
           <div id="title-card">
               <%= arts[i].title %>    

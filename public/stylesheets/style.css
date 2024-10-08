@@ -33,9 +33,9 @@
   }
   
   .flex-item {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     width: 12.5%; 
     height: 12.5%;
     /* background-color: grey; */
