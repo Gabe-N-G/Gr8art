@@ -13,14 +13,14 @@
         <%- include('../partials/_navbar.ejs') %> 
 
             <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
-
+            <button id="grid-size" onclick="gridSize()">Grid size 8x8</button>
+            
             <div class="flex-container" id="new-container">
             <!-- what JS is updating with 
                 <div id="cell1" class="flex-item">1</div> 64 times -->
             </div>
 
-            <button id="grid-size" onclick="gridSize()">Grid size 8x8</button>
-            <p>16x16 grid works best on desktop.</p>
+            <p>16x16 grid available on desktop.</p>
             
             <label for="color">Select your color</label>
             <select name="color" id="color-select">
