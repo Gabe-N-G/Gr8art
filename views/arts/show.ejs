@@ -23,25 +23,29 @@
                 <%}); %>
             <% } %>   
         </div>
-    <p>Description: <%= art.description %></p>
+
+    <h3>Description: <%= art.description %></h3>
     <!-- placeholder for comment section -->
      
-    <p>Comments:</p>
-    <% art.comments.forEach(comment => { %>
-    
-        <div class="comment-card"><%= comment.owner.username %> -  <%= comment.body %></div>
+    <div class="comment-view">
+        <p>Comments:</p>
+        <% art.comments.forEach(comment => { %>
+            <div class="comment-card"><%= comment.owner.username %> -  <%= comment.body %></div>
+        <%}) %>
+    </div>
 
-    <%}) %>
 
     <% if(match){ %>
-        <p>You made this!</p>
-        <a href="/arts/<%= art._id %>/edit">Edit this work</a>
-        <form action="/arts/<%= art._id %>?_method=DELETE" method="POST"> 
-           <button type="submit">Delete this work 😢</button> 
-        </form>
+        <div class="match">
+            <p>You made this!</p>
+            <a href="/arts/<%= art._id %>/edit">Edit this work</a>
+            <form action="/arts/<%= art._id %>?_method=DELETE" method="POST"> 
+            <button type="submit">Delete this work 😢</button> 
+            </form>
+        </div>
     <% } %>
  
-    <form action="/comments/arts/<%=art._id%>/comments" method="POST">
+    <form action="/comments/arts/<%=art._id%>/comments" method="POST" id="art-form">
                 
         <label for="body">Leave a comment!</label>
         <textarea name="body" id="body"></textarea>

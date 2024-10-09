@@ -108,7 +108,7 @@
 
   #toolbar{
     display: flex;
-    width:75%;
+    width: 375px;
     /* flex-direction: column; */
     justify-content: space-evenly;
     margin: 10px;
@@ -127,6 +127,19 @@
     display: none;
   }
 
+  .comment-view{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  
+
+  .match{
+    margin: 10px
+  }
 
   #homescreen{
     margin-top: 0;
@@ -145,6 +158,11 @@
     nav {
       font-size: 1.5rem;
     }
+
+    #toolbar{
+      width: 600px
+    }
+
 
     .phone-hidden{
       display:block
