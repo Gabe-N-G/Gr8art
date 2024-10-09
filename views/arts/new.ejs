@@ -11,9 +11,17 @@
 </head>
     <body>
         <%- include('../partials/_navbar.ejs') %> 
+
+            <div class="desktop-hidden"><p>16x16 grid available on desktop.</p></div>
             <div id="toolbar">
                 <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
-                <p>new grid:</p><button id="grid-size" onclick="gridSize()">Grid size 8x8</button>
+                
+                
+                <div id="grid-size-panel" class="phone-hidden">     
+                    <p>new grid:</p><button id="grid-size" onclick="gridSize()">Grid size 8x8</button>
+                </div>
+
+                <p>Current color: <span style="background-color: black;" id="selected-color">■■</span></p>
             </div>
             
             <div id="edit-container">
@@ -22,25 +30,26 @@
                     <div id="cell1" class="flex-item">1</div> 64 times -->
                 </div>
                 
-                <div id="palette">
-                Color:
+                <div class="palette phone-hidden">
+                    <div class="head"> color </div>
                 </div>
             
             </div>
-
-
-            <p>16x16 grid available on desktop.</p>
             
-            <p>Current color: <span style="background-color: black;" id="selected-color">■■</span></p>
-            <label for="color-select">Select your color:</label>
-            <select name="color" id="color-select">
-                <!-- <option value="black">Black</option>
-                for everything in app.js colors -->
-            </select>
-            <button id="fill" onclick="fill()">Fill with color</button>
+            <!-- <p>Current color: <span style="background-color: black;" id="selected-color">■■</span></p> -->
+            <div id="toolbar">
+                <div>
+                    <label for="color-select">Select your color:</label>
+                    <select name="color" id="color-select">
+                    </select>    
+                </div>    <!-- <option value="black">Black</option>
+                    for everything in app.js colors -->
+                
+                    <button id="fill" onclick="fill()">Fill with color</button>
+            </div>
 
             <form action="/arts" method="POST" id="art-form">
-                
+                            
                 <label for="title">Title:</label>
                 <input type="text" name="title" id="title">
                 

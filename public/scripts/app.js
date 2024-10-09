@@ -23,7 +23,7 @@ const colorSelect = document.querySelector("#color-select")
 const colorInput = document.querySelector("#colorArray")
 const bigButton = document.querySelector("#grid-size")
 const selectSpan = document.querySelector("#selected-color")
-const palette = document.querySelector("#palette")
+const palette = document.querySelector(".palette")
 
 let cells
 let autoclick
