@@ -11,30 +11,50 @@
 </head>
     <body>
         <%- include('../partials/_navbar.ejs') %> 
-        
-        <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
-            
+                    
             <h4>Warning: 16x16 pixel grid not reccomended for phones</h4>
             
-            <div class="flex-container">
-                <% if(art.colorArray.length > 64) {%>
-                    <%art.colorArray.forEach(color => { %>
-                        <div class="flex-item f256" style="background-color:<%=color %>"> </div>
-                    <%}); %>
-                <%} else {%>
-                    <%art.colorArray.forEach(color => { %>
-                        <div class="flex-item" style="background-color:<%=color %>"> </div>
-                    <%}); %>
-                <% } %>   
+            <div id="toolbar">
+                <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
+                
+                <div id="grid-size-panel" class="phone-hidden">     
+                    <span>New grid: </span><button id="grid-size" onclick="gridSize()">Grid size 8x8</button>
+                </div>
+
+                <p>Current color: <span style="background-color: black;" id="selected-color">■■</span></p>
+            </div>
+
+            
+
+            <div id="edit-container">
+                <div class="flex-container">
+                    <% if(art.colorArray.length > 64) {%>
+                        <%art.colorArray.forEach(color => { %>
+                            <div class="flex-item f256" style="background-color:<%=color %>"> </div>
+                        <%}); %>
+                    <%} else {%>
+                        <%art.colorArray.forEach(color => { %>
+                            <div class="flex-item" style="background-color:<%=color %>"> </div>
+                        <%}); %>
+                    <% } %>   
+                </div>
+            
+                <div class="palette phone-hidden">
+                    <div class="head"> Color: </div>
+                </div>
+            
             </div>
             
-            <p>Current color:<span id="selected-color"> ■</span></p>
-            <label for="color-select">Select your color:</label>
-            <select name="color" id="color-select">
-                <!-- <option value="black">Black</option>
-                ... -->
-            </select>
-            <button id="fill" onclick="fill()">Fill with color</button>
+            <div id="toolbar">
+                <div>
+                    <label for="color-select">Select your color:</label>
+                    <select name="color" id="color-select">
+                    </select>    
+                </div>    <!-- <option value="black">Black</option>
+                    for everything in app.js colors -->
+                
+                    <button id="fill" onclick="fill()">Fill with color</button>
+            </div>
 
             <form action="/arts/<%= art.id %>?_method=PUT" method="POST" id="art-form">
                 
@@ -51,7 +71,7 @@
 
                 <br>
 
-                <button type="submit">edit art</button>
+                <button type="submit">Edit art!</button>
             </form>
     </body>      
 </html>
