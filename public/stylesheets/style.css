@@ -7,6 +7,7 @@
   nav{
     display: flex;
     justify-content: space-between;
+    padding: 10px;
     align-items: center;
     position: fixed;
     font-size: 1rem;
@@ -124,6 +125,16 @@
 
   .phone-hidden{
     display: none;
+  }
+
+
+  #homescreen{
+    margin-top: 0;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   @media (min-width: 768px){

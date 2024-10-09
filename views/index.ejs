@@ -6,19 +6,28 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Home Page</title>
 </head>
+
+
+
 <body>
   <%- include('./partials/_navbar.ejs') %> 
-  <% if (user) { %>
-    <h1>Welcome to the app, <%= user.username %>!</h1>
+  <div id="homescreen">
+    
+    <div class="display-container">
+        <% displayGrid.forEach(color => { %>
+          <div class="flex-item" style="background-color:<%=color %>"> </div>
+        <%}); %>
+    </div> 
+
+    <h1>Welcome to gr8Art</h1>
+    <h2>an array based painting program</h2>
+    <o>by Gabriel Gutierrez</o>
+    <a href="https://github.com/Gabe-N-G/Gr8art">github repo</a>
     <p>
-      <a href="/auth/sign-out">Sign out</a>
+      <a href="/auth/sign-in">Sign in</a> or
+      <a href="/auth/sign-up">Sign up</a>.
+      
     </p>
-  <% } else { %>
-    <h1>Welcome to the app, guest.</h1>
-    <p>
-      <a href="/auth/sign-up">Sign up</a> or
-      <a href="/auth/sign-in">Sign in</a>.
-    </p>
-  <% } %>
+  </div>
 </body>
 </html>

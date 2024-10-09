@@ -16,6 +16,7 @@ const commentsController = require('./controllers/comments.js')
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 const path = require('path');
+const Art = require('./models/art.js');
 
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -38,14 +39,17 @@ app.use(
 
 app.use(passUserToView);
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   // Check if the user is signed in
   if (req.session.user) {
     // Redirect signed-in users to their applications index
+
     res.redirect(`/arts`);
   } else {
     // Show the homepage for users who are not signed in
-    res.render('index.ejs');
+    res.render('index.ejs', 
+      {displayGrid : ['grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'magenta', 'magenta', 'magenta', 'magenta', 'grey', 'grey', 'grey', 'grey', 'magenta', 'grey', 'grey', 'magenta', 'grey', 'grey', 'grey', 'grey', 'magenta', 'magenta', 'magenta', 'magenta', 'grey', 'grey', 'grey', 'grey', 'magenta', 'grey', 'grey', 'magenta', 'grey', 'grey', 'grey', 'grey', 'magenta', 'grey', 'grey', 'magenta', 'grey', 'grey', 'grey', 'grey', 'magenta', 'magenta', 'magenta', 'magenta', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey', 'grey'] }
+    );
   }
 });
 
