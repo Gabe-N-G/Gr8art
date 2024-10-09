@@ -11,8 +11,11 @@
 </head>
     <body>
         <%- include('../partials/_navbar.ejs') %> 
+        
         <button id="grid-toggle" onclick="gridToggle()">Grid on/off</button>
+            
             <h4>Warning: 16x16 pixel grid not reccomended for phones</h4>
+            
             <div class="flex-container">
                 <% if(art.colorArray.length > 64) {%>
                     <%art.colorArray.forEach(color => { %>
