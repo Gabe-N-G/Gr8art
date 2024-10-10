@@ -1,6 +1,6 @@
 # Gr8Art
 - An array based painting program
-- ![heroku link here](https://gr8art-ead8e5329b10.herokuapp.com/)
+- [heroku link here](https://gr8art-ead8e5329b10.herokuapp.com/)
 
 
 ### Home page
