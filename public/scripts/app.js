@@ -13,7 +13,7 @@ console.log("hello world")
 
 let currentColor = "black"
 let colorArray = []
-let selectColors = ["black", "red", "green", "blue", "yellow", "grey", "cyan", "magenta", "brown", "white"]
+let selectColors = ["black", "red", "green", "blue", "yellow", "grey", "cyan", "magenta", "brown", "white",]
 let grid = true
 let small = true
 
@@ -24,6 +24,7 @@ const colorInput = document.querySelector("#colorArray")
 const bigButton = document.querySelector("#grid-size")
 const selectSpan = document.querySelector("#selected-color")
 const palette = document.querySelector(".palette")
+const customColor = document.querySelector("#custom")
 
 let cells
 let autoclick
@@ -143,6 +144,13 @@ function paletteChange(e){
     
 }
 
+function customColorChange(e){
+    currentColor = e.target.value
+    selectSpan.style.backgroundColor = currentColor
+    selectSpan.style.color = currentColor
+    colorSelect.value = "custom"
+}
+
 makePalette()
 makeColorSelect()
 makeGrid()
@@ -174,7 +182,7 @@ container.addEventListener("mouseleave", ()=>{
 
 colorSelect.addEventListener("change",handleChange)
 palette.addEventListener("click", paletteChange)
-
+customColor.addEventListener("input", customColorChange)
 
 
 //adds color array as an hidden input to form
